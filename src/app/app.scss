@@ -1,6 +1,24 @@
 // http://ionicframework.com/docs/v2/theming/
 
 
+  /*  @import url('https://fonts.googleapis.com/css?family=Montserrat:300'); */
+@import url('../assets/fonts/montserrat-v10-latin-300.ttf');
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../assets/fonts/montserrat-v10-latin-300.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat Light'), local('Montserrat-Light'),
+  url('../assets/fonts/montserrat-v10-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../assets/fonts/montserrat-v10-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../assets/fonts/montserrat-v10-latin-300.woff') format('woff'), /* Modern Browsers */
+  url('../assets/fonts/montserrat-v10-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../assets/fonts/montserrat-v10-latin-300.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+
+@import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These

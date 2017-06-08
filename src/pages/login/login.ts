@@ -11,10 +11,10 @@ import 'rxjs/add/operator/map';
 
 /*
   Generated class for the Login page.
-
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+
 @Component({
   selector: 'login',
   templateUrl: 'login.html'
@@ -27,37 +27,33 @@ export class login {
     this.data = {};
     this.data.username = "";
     this.data.password = "";
-    this.data.response = "";
+    //this.data.response = "";
   }
 
 login(){
   let username = this.data.username;
   let password = this.data.password;
 
-
-  console.log(username + " " + password);
+ // console.log(username + " " + password);
   let data = JSON.stringify({username, password});
 
   //let link = "http://132.148.23.19/reports/js/login.php";
   let link = "http://localhost/reports/js/login.php";
 
-  this.http.post(link,data)
+  this.http.post(link, data)
   .map( res => res.json())
   .subscribe(
     data=>{
+//    console.log(this.fetchdata.usertype);
+    let loader = this.loadingCtrl.create({ content: "Please wait...", duration: 3000 });
+    loader.present();
+
     this.fetchdata = data;
     console.log(data);
-//    console.log(this.fetchdata.usertype);
-
-      let loader = this.loadingCtrl.create({
-      content: "Please wait...",
-      duration: 3000
-    });
-    loader.present();
 
     if(this.fetchdata.usertype == "MD")
     {
-        this.navCtrl.setRoot(Page3);
+        this.navCtrl.setRoot(Page2);
     }
 
    else  if(this.fetchdata.usertype == "DIR")
@@ -87,6 +83,7 @@ login(){
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+
   }
 
 }
